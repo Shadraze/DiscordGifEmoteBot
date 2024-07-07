@@ -6,6 +6,8 @@ Makes use of two separate Python containers:
 1. For the Discord bot, which interacts through Discord's interactions API
 2. For an API with FastAPI, that the bot can make calls against
 
+Also, makes use of an Nginx container for reverse proxy.
+
 # Initial Setup:
 1. Add your discord bot token to ./Volumes/DiscordBot/token.txt
 2. Run: docker compose up
