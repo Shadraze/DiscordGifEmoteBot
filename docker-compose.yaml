@@ -1,0 +1,32 @@
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.27.0-bookworm-perl
+    networks:
+      - botserver
+    ports:
+      - 80:80    
+    volumes:
+      - ./Volumes/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+
+  api_v1:
+    container_name: api_v1
+    build: ./API/.
+    networks:
+      - botserver
+    volumes:
+      - ./Volumes/API/gifEmote:/app/gifEmote/:rw
+    expose:
+      - 8000
+
+  discordbot:
+    container_name: discordbot
+    build: ./DiscordBot/.
+    networks:
+      - botserver
+    volumes:
+      - ./Volumes/DiscordBot/token.txt:/app/token.txt/:ro
+
+networks:
+  botserver:
+    name: botserver    

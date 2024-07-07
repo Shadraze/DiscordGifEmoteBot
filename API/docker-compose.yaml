@@ -1,0 +1,7 @@
+# file provided for development of only the API
+services:
+  siteapi:
+    build: "."
+    container_name: siteapi
+    ports:
+      - 8010:8000

@@ -1,0 +1,12 @@
+FROM python:3.12.3
+
+RUN pip install fastapi
+RUN pip install pydantic_settings
+RUN pip install pynacl
+
+WORKDIR /app
+
+COPY . .
+
+ENTRYPOINT ["fastapi"] 
+CMD ["run","app.py","--root-path","/api/v1/huehuebot"]

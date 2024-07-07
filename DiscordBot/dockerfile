@@ -1,0 +1,11 @@
+FROM python:3.12.3
+
+RUN pip install discord.py
+RUN pip install requests
+
+WORKDIR /app
+
+COPY . .
+
+ENTRYPOINT ["python"] 
+CMD ["app.py"]
