@@ -8,7 +8,7 @@ Makes use of two separate Python containers:
 
 Also, makes use of an Nginx container for reverse proxy.
 
-# Initial Setup:
+## Initial Setup:
 1. Add your discord bot token to ./Volumes/DiscordBot/token.txt
 2. Run: docker compose up
 3. Test the discord bot on your private server
@@ -17,7 +17,7 @@ Note:
 It is necessary to build the docker images in between changes when testing the app as a whole with: 
 docker compose up --build
 
-# Demo 
+## Demo 
 API: https://prabeshgiri.com.np/api/v1/huehuebot/docs
 Discord Bot: https://discord.com/oauth2/authorize?client_id=1226780853351481376&permissions=414464727104&integration_type=0&scope=bot
 
@@ -25,7 +25,7 @@ Bot Commands:
 'huetake [gif file]' : Records the gif file through the API
 'huehue [gif filename]' : Displays a recorded gif file in chat. Extension should be ignored in provided filename.
 
-# Ending Thoughts:
+## Ending Thoughts:
 The disadvantage of using such an approach vs just using emojis with Nitro or tenor/other gif keyboard is that it leaves user messages intact.
 It is not possible to edit the user's message even with admin permissions are user messages are read only for the bot.
 The other issue is latency, but it is less pronounced for smaller gifs.
